@@ -49,6 +49,7 @@ const Home = () => {
             className="pl-16 w-full h-8 p-4 rounded-full border border-softGray bg-white placeholder:text-baseBlack placeholder:text-base"
             type="text"
             name="search"
+            autoComplete="off"
             placeholder="Search Books"
             onChange={(event) => {
               setSearchBook(event.target.value);
@@ -72,7 +73,7 @@ const Home = () => {
               }
             })
             .map((values) => {
-              const { id, bookName, image, description } = values;
+              const { id, author, bookName, image, description } = values;
               return (
                 <div
                   className="grid grid-cols-2  border-b border-stone-500 p-20"
@@ -83,8 +84,15 @@ const Home = () => {
                   </div>
 
                   <div className="px-10">
-                    <h1 className="pb-10 text-2xl">{bookName}</h1>
+                    <h1 className="pb-1 text-2xl">{bookName}</h1>
+                    <h6 className="pb-4 text-base font-bold">By: {author}</h6>
                     <p className="text-sm">{description}</p>
+                  </div>
+
+                  <div className="pt-2">
+                    <button className="w-full border hover:border-amber-300 hover:text-amber-300 rounded p-1 text-sm">
+                      Edit Book
+                    </button>
                   </div>
                 </div>
               );
