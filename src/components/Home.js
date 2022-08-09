@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // import books from "../data/book-list.json";
 import Categories from "../data/Categories";
 // import PageTitle from "./header/page-title";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [data, setData] = useState(Categories);
@@ -90,9 +91,11 @@ const Home = () => {
                   </div>
 
                   <div className="pt-2">
-                    <button className="w-full border hover:border-amber-300 hover:text-amber-300 rounded p-1 text-sm">
-                      Edit Book
-                    </button>
+                    <Link to={id}>
+                      <button className="w-full border hover:border-amber-300 hover:text-amber-300 rounded p-1 text-sm">
+                        Edit Book
+                      </button>
+                    </Link>
                   </div>
                 </div>
               );
